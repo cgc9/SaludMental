@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Salud p&uacute;blica - Facultad Nacional de Salud Pública</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.9.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-comments.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/jquery-ui/jquery-ui.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="custom-head" style="background-color: #ececec;">
+    </header>
+
+    <section id="nav-container" class="container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-default ">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" style="padding-right:px;" id="myNavbar">
+
+                        <ul class="nav navbar-nav ">
+                            <li class="dropdown">
+                                <a style="color:white" href="index.html" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Apropiación social <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="webinar.html"><i class=""></i>Webinars</a></li>
+                                    <li><a href="fonoteca.html"><i class=""></i>Fonotecas</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Salud mental online<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href=""><i class=""></i>Telesalud</a></li>
+                                    <li><a href=""><i class=""></i>Línea de la felicidad</a></li>
+                                    <li><a href=""><i class=""></i>App SAMU</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Educación<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="educacionNoFormal.html"><i class=""></i>Educación no formal</a></li>
+
+                                </ul>
+                            </li>
+
+
+                            <!-- <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opción 4 <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href=""><i class=""></i>Op1</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opción 5 <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href=""><i class=""></i>Op1</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a style="color:white" href="" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Datos & software
+                                </a>
+                            </li>
+                            <li><a id='ocultaMain' style="color:aliceblue; " class='btn btn-sm-1' role='button'
+                                    aria-haspopup='true' aria-expanded='false'><span id="abajo"
+                                        class="fa fa-angle-double-up"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- <div class="container"> -->
+        <!-- <div id="contenido"> -->
+
+        <div class="container" align="left" style="width:83%;margin-top:15px; margin-left: 130px;">
+            <div class="form-group">
+                <div class="row">
+                <!-- <ul class="nav nav-tabs"> -->
+                    <div class="active" id="liresultados">
+                        <!-- <ul> -->
+                            <div class="col-md-6" style="">
+                                <h4 style="color: #0F5531;"><i class="fas fa-play-circle"></i> Programas de radio y
+                                    audios</h4>
+                            </div>
+                        <!-- </ul> -->
+                    </div>
+                    <!-- </li> -->
+                    <div class="col-md-6" style="float: right;margin-top:3px;">
+                        <div class="form-inline">
+                            <label>Buscar:</label>
+                            <input type="text" name="inpubus" id="inpubus" class="form-control input-sm"
+                                style="width: 75%"><button class="btn btn-primary btn-sm" id="btnbuscar"
+                                style="margin-left: 5px;"><i class="fas fa-search"></i></button>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                <hr />
+                <!-- </ul> -->
+            </div>
+          
+
+            <div id="formdocumentacion" >
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Agregar grabacion del programa radial</label>
+                            <button class="btn btn-success btn-sm" data-target="#md_radio" data-toggle="modal"
+                                id="btnmas"><span class="glyphicon glyphicon-plus"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <p>Acceda a las grabaciones del programa radial Radio consultorio de Salud Pública,
+                                transmitido por la Emisora Cultural de la Universidad de Antioquia 1.410 en AM de 10:00
+                                a 11:00 de la mañana todos los viernes: </p>
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+                <br />
+
+                <div class="col-sm-12">
+                    <table class="table table-hover tableestilo" id="tblradio">
+
+                        <thead>
+                            <tr>
+                                <td><input type="text" class="form-control input-sm" placeholder="Buscar fecha"
+                                        id="fechinput"></td>
+                                <td><input type="text" class="form-control input-sm" placeholder="Buscar tema"
+                                        id="temainput"></td>
+                                <td><input type="text" class="form-control input-sm" placeholder="Buscar invitado"
+                                        id="invinput"></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Tema</th>
+                                <th>Invitado</th>
+                                <th>Grabaci&oacute;n</th>
+                                <th>Descarga</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 140px;">Febrero 03 de 2017</td>
+                                <td style="width: 291px;">La salud, el medio ambiente y enfermedades asociadas a la
+                                    pobreza</td>
+                                <td style="width: 153px;">Jose Pablo Escobar Vasco&nbsp;</td>
+                                <td style="width: 69px; "><audio
+                                        src="http://saludpublicavirtual.udea.edu.co/audio/radio/2017/feb/spm03022017.mp3"
+                                        controls> </audio></td>
+                                <td><a href="" class="btn btn-success btn-sm btndescarga" preload="metadata" download><i
+                                            class="fa fa-download"></i></a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    <!-- </div> -->
+
+    <div class="modal" id="md_radio" role="dialog" tabindex="1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header mhsuccess">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Crear grabaci&oacute;n</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" name="id" id="id_usuario">
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;margin-top: 10px;">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Fecha de grabaci&oacute;n</label><a href="#"
+                                        data-toggle="tooltip" data-placement="right"
+                                        title="Debe indicar la fecha de grabaci&oacute;n" sy><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <input type="text" name="fecha_grab" class="form-control fecha2" id="fecha_grab">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Tema</label><a href="#" data-toggle="tooltip"
+                                        data-placement="right" title="Debe indicar el tema de grabaci&oacute;n"><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <input type="text" name="intema" class="form-control" id="intema">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Invitados</label><a href="#" data-toggle="tooltip"
+                                        data-placement="right" title="Debe indicar los nombres de invitados"><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <textarea class="form-control" name="ininvitados" id="ininvitados"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Cargar grabaci&oacute;n</label><a href="#"
+                                        data-toggle="tooltip" data-placement="right"
+                                        title="Debe cargar la grabaci&oacute;n"><i class="fa fa-question-circle"
+                                            aria-hidden="true"></i></a>
+                                    <input type="file" name="" class="form-control" name="incargrab" id="incargrab">
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnenviarrad">Enviar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="container" id="piefooter">
+            <div class="col-xs-12 col-sm-3">
+                <h4>Oríentese</h4>
+                <div class="manlistas">
+                    <HR>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/">Atención
+                            al ciudadano</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/atencion-ciudadano/contenido/ascontenidosmenu/canales-atencion/">Canales
+                            de atención al ciudadano</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/atencion-ciudadano/contenido/ascontenidosmenu/contdirectoriotelefonico/">directorio
+                            telefónico</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/atencion-ciudadano/contenido/ascontenidosmenu/notificaciones-judicales-aviso/!ut/p/z1/rVFdb4JAEPwt_gBye3zzSBCxVEBAFHgxJx72rIApqGl_fc-XNlqtMWGfdpOZyewMylGK8poc2YZ0rKnJjt9Zri51wxKxKcMkiOY6mGqcOL4TYkcFtLgCjEdngGwakhHg2MYof4oPr1gBM7Sn_iywpkNXfJL_F3Dmw50xAc1RZqHM0IeRHaIc5fuCrVGmUakAjKkAFIuCLGtUMIgIglRqBDS1XIklIPeRNx6e-OFZ3obLku5NYHXZoLRo6o7WbM1X0v4cbUXrA0rrpmMlK0jB46etsD2s-bHjGy-lbdBi-OsV89_zSwtO5FrcgmXaWjzHUQjXgBv1XAJ00Ec8_9nElhMPIFCuATcKehRxxivS7uekofjJ4P8X9NS-BaWeBW25b8F-Xx57rvK04L5KkuR9pX-eaArsZavsj1-zsqqWvi-QlQ4nczD4BsvHcTY!/dz/d5/L2dBISEvZ0FBIS9nQSEh/?urile=wcm%3Apath%3A%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FasInstitucional%2FAtencion%20al%20ciudadano%2FAtenci!c3!b3n%20al%20ciudadano%2FContenido%2FasContenidosMenu%2Fnotificaciones-judicales-aviso">Notificaciones
+                            judiciales y por aviso</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/atencion-ciudadano/contenido/ascontenidosmenu/contpreguntasfrecuentes/">Preguntas
+                            frecuentes</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/normativa">Normativa</a>
+                    </p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/atencion-ciudadano/contenido/ascontenidosmenu/transparencia/">Transparencia
+                            y acceso a la información</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/mapa-sitio">Mapa del sitio</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/somos-udea/empleados/seguridad-personas-bienes/autorizaciones/contenido/asmenulateral/ingreso-salida-vehiculos/!ut/p/z1/1VVLc5swEP4rzsFHRsvDQI8EmxmnNnEdu8ZcMjIIWy1IBIFb59dXpGknTmo87uiQcGK1q293v30IxShCMcN7usU15QznUl7H9r37yTd0z4IJhOMheLa59BfjCQTXFlp1GQCYKD6tHvlO9_3WQXsfTnweoK8oRnHC6rLeoXXJqxrnTUpwH7A4lna8IH_-BS-4-C2QoswJTrnogyDbpqIpTnu4V5JKSAJE79DbUMKIVOOm5hV9xIlkppUTzmrCaMpbxIKwJsc1qXDeB8q2FRFcEziXcNqe7GjS5Fy0oZYJTdHaxQkMMqlLs42tWUmGNTcxHM1wbSC6bW9M5ww1LXfxZaX5rA_A-zKahYtbfza8Mc6XJu4yCYdOt8FTiF0GT-1xbOCCG8ggF5ORtZwC3A7eILzN4lyLrCUPzskg70x0d2FhugENQzWgrhpQdcpjUA2omsOxag69y1O-OTcsctnSbw8PsSc3WrtcftYoeu8rTcZsVFN_upVU4HqnUZZxFHX6RdGxXxT99StVL_2i6KTfzuoEc8X9E8wVj0zgWKoBddWAqlMObbUj075x_26__-injzh7ZbFcFq55oNr3-Wjugjko94-LrCjuw1DDm-eDCVl5s1dn0mg1PPzwrq5-AUfoKqU!/dz/d5/L2dBISEvZ0FBIS9nQSEh/?urile=wcm%3Apath%3A%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FasSomosUdeA%2FEmpleados%2FSeguridad%20a%20personas%20y%20bienes%2FAutorizaciones%2FContenido%2FasMenuLateral%2Fingreso-salida-vehiculos">Pico
+                            y placa en Ciudad Universitaria</a></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h4>Servicios en línea</h4>
+                <div class="manlistas">
+                    <HR>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/atencion-ciudadano/contenido/ascontenidosmenu/pqrs/!ut/p/z1/zVJNj4IwEP0revBIWihgORIWv1b8xg8uphbQbqSgVLPZX7_FRLOyusbEw_bU6bx5nXnzQADmIODkyNZEsJSTrYwXgbnElqOptg67_dEUQ9sc-81ec6g2TQhmJUCrUQB020JWXx27KgieqofvqgHtoTvoTfrO4K2jPVn_G1DUwzvHhmAKAhBQLjKxAYss3QuyPYQRqUGSX0ebNInOd8ZzwcSBnjSSDyLixb1CthXKDiEJCU_Pz1WKqitUztGUyywLC1h-CfIk4ocazHb7vGgroywEixihOtJXVIFqjBUdQ0Mhmh4pMTJJRDXVIpSCziOd5CK1ved4a0lLxEZhPE7B_PIzmJfbAPNTG7KOfex2gS1VKvKfQib-kUyzQqifozdHHUeO7thufTxVR0NYBtyw6DUAQ9yQHpx0Xd33IOwbZcANkz6y2ULatH5_P3UwfnLhfxN65qsJ0YsJXf3VhK8dueV1jKcJs8T3_QQjY7vGwmqztkJWGCIjO35N4iRZ9jy7-g1jDDgi/dz/d5/L2dBISEvZ0FBIS9nQSEh/?urile=wcm%3Apath%3A%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FasInstitucional%2FAtencion%20al%20ciudadano%2FAtenci!c3!b3n%20al%20ciudadano%2FContenido%2FasContenidosMenu%2Fpqrs">Peticiones,
+                            quejas, reclamos y sugerencias</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/registro-usuarios/registro-usuarios">Registro
+                            de usuarios externos</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/login">Iniciar sesión del
+                            Portal</a></p>
+                    <p><a href="http://correo.udea.edu.co/">Consultar correo electrónico</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/generales/interna/!ut/p/z1/xVRNc4IwEP0tHnrMZPk0HBm0VkW0ClZycSJEpRWCQDttf32DbQ-WUccZZ5pT3uzbnfd2s8EULzDN2FuyYVUiMraTOKTmkliOqtg6uL3pwAHbdOxuezZ3VaLip2MCeP2OJGiB4_ddANAwPR0e9ZRG_lAxwH7sTjx_7Ew6A_Xa_AaBntc_xxTTKKvyaovDXBQV273GnN0BK4_RVqT8916KVJTfIC_Empei4GUdiERW8SyJxQHFvKxYxH5QnhRMRksUi4jLC4pYxeOC1QLyKIlxaBptolgsRvraiJDOTBOtgGiIcw1gZVgWJ-Sv4aaj2jCcODbIfHqup4eRHRMIkHs5E9_t6sEIYGw0KjSHdklFKF20T7oYK3h2ZVvOF9Th1gXVWxe8teXh9QoHl5ZF_gbJ835Pbbky9Ut_r_Dif3YmT4MgSIn2gV6mD5_-Ok2XnofYioBm7Dat1hc4she4/dz/d5/L2dBISEvZ0FBIS9nQSEh/?page=udea.generales.interna&urile=wcm%3Apath%3A%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FasSomosUdeA%2FProfesores%2FasContenidos%2FasDestacados%2Faspirantes-docente-catedra">Aspirantes
+                            a docente de cátedra</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/saluda/consultar-afiliados">Consultar
+                            afiliados al Programa de Salud UdeA</a></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h4>Proyectos estratégicos</h4>
+                <div class="manlistas">
+                    <HR>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/sistema-bibliotecas">Sistema de
+                            Bibliotecas</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/cultura/museo-universitario">Museo
+                            universitario</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/editorial">Editorial</a></p>
+                    <p><a href="http://www.parquedelemprendimiento.com/">Parque E</a></p>
+                    <p><a href="http://aprendeenlinea.udea.edu.co/">Aprende en línea</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/extension-UdeA/practicas">Prácticas</a>
+                    </p>
+                    <p><a href="http://parquedelavida.com/">Parque de la vida</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/donaciones">Fondo de
+                            donaciones</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/saluda">Programa de salud</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/salud-seguridad">Seguridad
+                            y salud en el trabajo</a></p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/habilitacion-servicios-salud">Habilitación
+                            de servicios de salud</a></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+
+                <h4><SPAN STYLE="font-size: 16px">Estudiar en la</SPAN> U de A</h4>
+                <div class="manlistas">
+                    <HR>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/estudiar-udea/pregrado/oferta/">Pregrado</a>
+                    </p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/estudiar-udea/posgrado/oferta/">Posgrado</a>
+                    </p>
+                    <p><a
+                            href="http://www.udea.edu.co/wps/portal/udea/web/inicio/estudiar-udea/udea-educacion-virtual/">Ude@
+                            Educación virtual</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/estudiar-udea/educacion-continua">Formación
+                            continua</a></p>
+                    <p><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/estudiar-udea/otras-opciones">Otras
+                            opciones</a></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-1" style="float: right;" id="flecha">
+                <h4><a id="ocultaMain2" role="button" aria-haspopup="true" aria-expanded="false"
+                        style="color: white;"><span id="flefooter" class="fa fa-angle-double-down"></span></a></h4>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/funcion.js"></script>
+    <script type="text/javascript" src="assets/js/funciones.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/jsTables/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.textcomplete.min.js"></script>
+    <script type="text/javascript" src="assets/js/fonoteca.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="assets/js/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="assets/jsTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/jsTables//dataTables.bootstrap4.min.js"></script>
+    <script src="assets/jquery-ui/jquery-ui.min.js"></script>
+
+
+
+</body>
+
+
+</html>
