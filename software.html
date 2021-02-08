@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Salud p&uacute;blica - Facultad Nacional de Salud Pública</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.9.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-comments.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/jquery-ui/jquery-ui.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="custom-head" style="background-color: #ececec;">
+    </header>
+
+    <section id="nav-container" class="container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-default ">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" style="padding-right:px;" id="myNavbar">
+
+                        <ul class="nav navbar-nav ">
+                            <li>
+                                <a style="color:white" href="index.html" role="button" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Apropiación social <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="webinar.html"><i class=""></i>Webinars</a></li>
+                                    <li><a href="videoteca.html"><i class=""></i>Videoteca</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Salud mental online<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href=""><i class=""></i>Telesalud</a></li>
+                                    <li><a href=""><i class=""></i>Línea de la felicidad</a></li>
+                                    <li><a href=""><i class=""></i>App SAMU</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Educación<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="educacionNoFormal.html"><i class=""></i>Educación no formal</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a style="color:white" class="nav-link dropdown-toggle" href="" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Datos & software<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="software.html"><i class=""></i>Software</a></li>
+                                    <li><a href="datos.html"><i class=""></i>Datos</a></li>
+                                    <li><a href="modelos.html"><i class=""></i>Modelos</a></li>
+                                    <li><a href="analisis.html"><i class=""></i>Análisis</a></li>
+                                </ul>
+                            </li>
+                            <li><a id='ocultaMain' style="color:aliceblue; " class='btn btn-sm-1' role='button'
+                                    aria-haspopup='true' aria-expanded='false'><span id="abajo"
+                                        class="fa fa-angle-double-up"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: 15px;margin-left: 50px;width:92%">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="active" id="liresultados">
+                    <div class="col-md-6">
+                        <h4 style="color: #0F5531; font-weight: bold;"><i class="fas fa-laptop"></i> Software
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-md-6" style="float: right;margin-top:3px;">
+                    <div class="form-inline">
+                        <label>Buscar:</label>
+                        <input type="text" name="inpubus" id="inpubus" class="form-control input-sm"
+                            style="width: 75%"><button class="btn btn-primary btn-sm" id="btnbuscar"
+                            style="margin-left: 5px;"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div id="formdocumentacion">
+            <div class="row" style="display: none;">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Agregar un nuevo software</label>
+                        <button class="btn btn-success btn-sm" data-target="#md_software" data-toggle="modal"
+                            id="btnmas"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs" id="tabEventos" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#software">
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                                Todos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#software">
+                                <i class="fa fa-laptop" aria-hidden="true"></i>
+                                Escritorio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#software">
+                                <i class="fa fa-window-maximize" aria-hidden="true"></i>
+                                Web
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#software">
+                                <i class="fa fa-mobile" aria-hidden="true"></i>
+                                Aplicaciones móviles
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="software">
+                            <div class="col-sm-20" style="margin-top: 10px;">
+                                <table id="softwareTable" class="table table-hover tableestilo">
+                                    <thead>
+                                        <tr>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar tipo" id="tipoinput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar tema" id="temainput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar descripción" id="descripinput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar linea de acción" id="lineainput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar fecha" id="fechainput">
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar productor" id="prodinput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar lenguaje" id="lenguajeinput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar motor BD" id="motorinput"></td>
+                                            <td><input type="text" class="form-control input-sm"
+                                                    placeholder="Buscar versión" id="versioninput"></td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center" style="width: 100px;">Tipo</th>
+                                            <th class="text-center" style="width: 130px;">Tema</th>
+                                            <th class="text-center" style="width: 140px;">Descripción</th>
+                                            <th class="text-center" style="width: 140px;">Línea de acción</th>
+                                            <th class="text-center" style="width: 90px;">Fecha</th>
+                                            <th class="text-center" style="width: 70px;">Productor</th>
+                                            <th class="text-center" style="width: 70px;">Lenguaje</th>
+                                            <th class="text-center" style="width: 70px;">Motor BD</th>
+                                            <th class="text-center" style="width: 20px;">Versión</th>
+                                            <th class="text-center" style="width: 80px;">Enlace</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Aplicación móvil</td>
+                                            <td>Buho</td>
+                                            <td>Manejo de información de empleados</td>
+                                            <td>Transversal</td>
+                                            <td>15 Enero 2015</td>
+                                            <td>FNSP</td>
+                                            <td>Java</td>
+                                            <td>MySQL</td>
+                                            <td>3.0</td>
+                                            <td><a style=""
+                                                    href="http://saludpublicavirtual.udea.edu.co:8080/buho/convocatorias/index"
+                                                    role="button" aria-expanded="false">BUHO</a></td>
+                                        </tr>
+                                    </tbody>
+                                    </tfoot>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="md_webinar" role="dialog" tabindex="1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header mhsuccess">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Crear webinar</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" name="id" id="id_usuario">
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;margin-top: 10px;">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Fecha de grabaci&oacute;n</label><a href="#"
+                                        data-toggle="tooltip" data-placement="right"
+                                        title="Debe indicar la fecha de grabaci&oacute;n" sy><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <input type="text" name="fecha_grab" class="form-control fecha2" id="fecha_grab">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Tema</label><a href="#" data-toggle="tooltip"
+                                        data-placement="right" title="Debe indicar el tema de grabaci&oacute;n"><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <input type="text" name="intema" class="form-control" id="intema">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Invitados</label><a href="#" data-toggle="tooltip"
+                                        data-placement="right" title="Debe indicar los nombres de invitados"><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <textarea class="form-control" name="ininvitados" id="ininvitados"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Enlace</label><a href="#" data-toggle="tooltip"
+                                        data-placement="right" title="Debe indicar el enlace del webinar"><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <textarea class="form-control" name="inenlace" id="inenlace"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnenviarrad">Enviar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="md_registro" role="dialog" tabindex="1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header mhsuccess">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Registrarse</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" name="id" id="id_usuario">
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;margin-top: 10px;">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Nombre completo</label><a href="#"
+                                        data-toggle="tooltip" data-placement="right"
+                                        title="Debe indicar su nombre completo" sy><i class="fa fa-question-circle"
+                                            aria-hidden="true"></i></a>
+                                    <input type="text" name="nom_usuario" class="form-control fecha2" id="nom_usuario">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Correo</label><a href="#" data-toggle="tooltip"
+                                        data-placement="right" title="Debe indicar su correo electrónico"><i
+                                            class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                    <input type="text" name="inEmail" class="form-control" id="inEmail">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnEnRegistro">Enviar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="md_mas" role="dialog" tabindex="1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header mhsuccess">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ver más</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="row" style="margin-left: 10px;margin-right: 10px;margin-top: 10px;">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label style="margin-right: 5px;">Enlace del evento</label><a href="#"
+                                        data-toggle="tooltip" data-placement="right"
+                                        title="Debe indicar su correo electrónico"><i class="fa fa-question-circle"
+                                            aria-hidden="true"></i></a>
+                                    <input type="text" name="inEmail" class="form-control" id="inEmail">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnEnRegistro">Enviar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container" id="piefooter">
+            <div id="custom-foot">
+                <div class="col-xs-12 col-sm-1" style="float: right;" id="flecha">
+                    <h4><a id="ocultaMain2" role="button" aria-haspopup="true" aria-expanded="false"
+                            style="color: white;"><span id="flefooter" class="fa fa-angle-double-down"></span></a></h4>
+                </div>
+            </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/funcion.js"></script>
+    <script type="text/javascript" src="assets/js/funciones.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/jsTables/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.textcomplete.min.js"></script>
+    <script type="text/javascript" src="assets/js/software.js"></script>
+    <script type="text/javascript" src="assets/jsTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/jsTables//dataTables.bootstrap4.min.js"></script>
+
+
+
+
+</body>
+
+
+</html>
