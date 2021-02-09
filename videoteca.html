@@ -22,7 +22,7 @@
     </header>
 
     
-        <section id="nav-container" class="container-fluid">
+        <section id="nav-container" class="container-fluid" style="width: 100%;">
             <div class="container">
                 <nav class="navbar navbar-default ">
                     <div class="container-fluid">
@@ -37,7 +37,7 @@
 
                             <ul class="nav navbar-nav ">
                                 <li>
-                                    <a style="color:white" href="index.html" role="button" aria-haspopup="true"
+                                    <a style="color:white" href="indexSalud.html" role="button" aria-haspopup="true"
                                         aria-expanded="false">
                                         Inicio
                                     </a>
@@ -98,8 +98,8 @@
             </div>
         </section>
 
-        <div id="body">
-        <div class="container" align="left" style="width:83%;margin-top:15px; ">
+        <!-- <div id="body"> -->
+        <div class="container" id="cont" style="margin-top: 15px;margin-left: 130px;width:83%">
             <div class="form-group">
                 <div class="row">
                     <div class="active" id="liresultados">
@@ -107,14 +107,14 @@
                             <h4 style="color: #0F5531;font-weight: bold;"><i class="fas fa-play-circle"></i> Videos</h4>
                         </div>
                     </div>
-                    <div class="col-md-6" style="float: right;margin-top:3px;">
+                    <!-- <div class="col-md-6" style="float: right;margin-top:3px;">
                         <div class="form-inline">
                             <label>Buscar:</label>
                             <input type="text" name="inpubus" id="inpubus" class="form-control input-sm"
                                 style="width: 75%"><button class="btn btn-primary btn-sm" id="btnbuscar"
                                 style="margin-left: 5px;"><i class="fas fa-search"></i></button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <hr />
             </div>
@@ -143,8 +143,9 @@
                             </tr>
                             <tr>
                                 <th>Fecha</th>
-                                <th>Tema</th>
-                                <th>Invitado</th>
+                                <th>Titulo</th>
+                                <th>Descripción</th>
+
                                 <th>Video</th>
                                 <!-- <th>Descarga</th> -->
                             </tr>
@@ -177,7 +178,7 @@
                 </div>
                 <div class="modal-body">
                 <div class='video-responsive'>
-                  <iframe width="100%" id="frameVideo" height="500" src="https://www.youtube.com/embed/xPWgGA8PXxM" frameborder="0" allow="" allowfullscreen></iframe>
+                  <iframe  id="frameVideo"  src="https://www.youtube.com/embed/xPWgGA8PXxM" frameborder="0" allow="" allowfullscreen></iframe>
                 </div>
                 </div>
                 <!-- <div class="modal-footer">

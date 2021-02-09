@@ -136,23 +136,23 @@ window.onload = function () {
     // });
     
 
-    $('#ocultaMain2').click(function () {
+    // $('#ocultaMain2').click(function () {
 
-        if (n == '0') { //verifica si la opcion de N es igual a cero oculta el menu
+    //     if (n == '0') { //verifica si la opcion de N es igual a cero oculta el menu
 
-            $(".manlistas").css("display", "none");
-            document.getElementById("flefooter").className = "fa fa-angle-double-up";
-            $("#footer").css("padding", "0");
-            n = 1;
-        } else {
-            $(".manlistas").css("display", "block");
-            document.getElementById("flefooter").className = "fa fa-angle-double-down";
-            $("#footer").css("padding", "20px");
+    //         $(".manlistas").css("display", "none");
+    //         document.getElementById("flefooter").className = "fa fa-angle-double-up";
+    //         $("#footer").css("padding", "0");
+    //         n = 1;
+    //     } else {
+    //         $(".manlistas").css("display", "block");
+    //         document.getElementById("flefooter").className = "fa fa-angle-double-down";
+    //         $("#footer").css("padding", "20px");
 
-            n = 0;
+    //         n = 0;
 
-        }
-    });
+    //     }
+    // });
 
 
     var men =

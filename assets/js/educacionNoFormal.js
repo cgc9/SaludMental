@@ -151,24 +151,28 @@ $('#fechinput').on( 'keyup', function () {
             } );
 
         $("#btndiplomado").click(function(){
+            $(".content").css("height","100%");
             $("#pnldiplomado").css("display","block");
             $("#pnlcursopres").css("display","none");
             $("#pnlcursonline").css("display","none");
             $("#pnlmoocs").css("display","none");
         });
         $("#btncurpresen").click(function(){
+            $(".content").css("height","100%");
             $("#pnldiplomado").css("display","none");
             $("#pnlcursopres").css("display","block");
             $("#pnlcursonline").css("display","none");
             $("#pnlmoocs").css("display","none");
         });
         $("#btncursonline").click(function(){
+            $(".content").css("height","100%");
             $("#pnldiplomado").css("display","none");
             $("#pnlcursopres").css("display","none");
             $("#pnlcursonline").css("display","block");
             $("#pnlmoocs").css("display","none");
         });
         $("#btnmoocs").click(function(){
+            $(".content").css("height","100%");
             $("#pnldiplomado").css("display","none");
             $("#pnlcursopres").css("display","none");
             $("#pnlcursonline").css("display","none");

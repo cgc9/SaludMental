@@ -2,6 +2,7 @@
 $(document).ready(function () {
     /* encabezado*/
 
+    // $('#md_video').modal('toggle')
 
     $(window).scroll(function (event) {
 
@@ -28,13 +29,13 @@ $(document).ready(function () {
 
             document.getElementById("custom-head").style.display = "none";
             $(this).find("span").removeClass().addClass("fa fa-angle-double-down");
-            $(".navbar-fixed-top").addClass('scrolled');
+            // $(".navbar-fixed-top").addClass('scrolled');
             $("#encabezado").css("margin-top", "50px");
             n = 1;
         } else {
             document.getElementById("custom-head").style.display = "block";
-            $(this).find("span").removeClass().addClass("fa fa-angle-double-up");
-            $(".navbar-fixed-top").removeClass('scrolled');
+            // $(this).find("span").removeClass().addClass("fa fa-angle-double-up");
+            // $(".navbar-fixed-top").removeClass('scrolled');
             $("#encabezado").css("margin-top", "0px");
             n = 0;
 
@@ -46,17 +47,18 @@ $(document).ready(function () {
 
         if (n == '0') { //verifica si la opcion de N es igual a cero oculta el menu
 
-            $(".manlistas").css("display", "none");
+             $(".manlistas").css("display", "none");
+            
             document.getElementById("flefooter").className = "fa fa-angle-double-up";
-            $("#footer").css("padding", "0");
-            $("#footer").css("margin-top", "78px");
+             $("#footer").css("padding", "0");
+
             n = 1;
         } else {
             $(".manlistas").css("display", "block");
+            
             document.getElementById("flefooter").className = "fa fa-angle-double-down";
-            $("#footer").css("padding", "20px");
-            $("#footer").css("margin-top", "15px");
-
+             $("#footer").css("padding", "25px");
+            
             n = 0;
 
         }
